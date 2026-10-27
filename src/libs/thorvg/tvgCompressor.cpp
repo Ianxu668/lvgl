@@ -117,7 +117,7 @@ struct BitStreamWriter
 
         if (oldPtr) {
             memcpy(newMemory, oldPtr, oldSize);
-            free(oldPtr);
+            lv_free(oldPtr);
         }
         return newMemory;
     }
@@ -139,7 +139,7 @@ struct BitStreamWriter
 
     ~BitStreamWriter()
     {
-        free(stream);
+        lv_free(stream);
     }
 
     void allocate(int bitsWanted)
